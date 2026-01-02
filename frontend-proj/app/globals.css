@@ -1,0 +1,350 @@
+.dashboard-bg {
+  background: #181F2A !important;
+}
+
+.dashboard-bg, .dashboard-bg * {
+  color: #181F2A;
+  text-shadow: none;
+}
+
+.dashboard-bg .card, .dashboard-bg .input-field, .dashboard-bg .btn-secondary {
+  background: #fff !important;
+  color: #181F2A !important;
+  border-color: #e5e7eb !important;
+  box-shadow: 0 4px 24px rgba(24,31,42,0.08) !important;
+}
+
+.dashboard-bg .btn-primary {
+  background: linear-gradient(90deg, #2563eb, #1d4ed8) !important;
+  color: #fff !important;
+  font-weight: 700;
+  border: none !important;
+  box-shadow: 0 4px 24px rgba(37,99,235,0.12) !important;
+}
+
+.dashboard-bg .input-field::placeholder {
+  color: #64748b !important;
+}
+
+.dashboard-bg select, .dashboard-bg option {
+  background: #fff !important;
+  color: #181F2A !important;
+}
+/* Force dashboard background color override */
+.dashboard-bg {
+  background: rgba(0,40,53,0.08) !important;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    --bg: rgba(0,40,53,0.08);
+    --surface: rgba(255,255,255,0.96);
+    --muted: rgba(10,10,10,0.6);
+    --text: rgba(10,10,10,0.96);
+    --primary-50: #e6f6ea;
+    --primary-100: #c9eed0;
+    --primary-200: #9fe2a9;
+    --primary-500: #2c7a3b;
+    --primary-600: #1f5c2e;
+    --primary-700: #163f20;
+    --accent: #16a34a;
+    background-color: var(--bg);
+    background-image: none;
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    -webkit-font-feature-settings: "liga" 1, "kern" 1;
+    word-break: break-word;
+    min-height: 100vh;
+    display: block;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    padding: 0.625rem 1rem;
+    background-image: linear-gradient(90deg, var(--primary-600), var(--primary-500));
+    color: white;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+    box-shadow: 0 8px 22px rgba(44,122,59,0.12);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(79,70,229,0.16);
+  }
+
+  .btn-secondary {
+    padding: 0.5rem 1rem;
+    background-color: rgba(255,255,255,0.9);
+    color: var(--text);
+    border: 1px solid rgba(10,10,10,0.06);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.12s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(255,255,255,1);
+  }
+
+  .btn-success {
+    padding: 0.5rem 1rem;
+    background-color: #10b981;
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+
+  .btn-success:hover {
+    background-color: #059669;
+  }
+
+  /* Generic button base to avoid collapsing and keep spacing */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    min-width: 110px;
+    padding: 0.6rem 1rem;
+  }
+
+  .btn-secondary {
+    min-width: 100px;
+    padding: 0.5rem 0.9rem;
+  }
+
+  /* Action bar utility to keep controls spaced and responsive */
+  .action-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  /* Ensure icon-only small buttons don't expand too wide */
+  .btn-icon {
+    min-width: 40px;
+    padding: 0.45rem;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 3rem;
+    background: var(--surface);
+    border: 1px solid rgba(10,10,10,0.06);
+    border-radius: 0.75rem;
+    outline: none;
+    box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+    transition: box-shadow 0.12s ease, transform 0.12s ease, border-color 0.12s ease;
+  }
+
+  .input-field:focus {
+    border-color: var(--primary-600);
+    box-shadow: 0 8px 24px rgba(67,56,202,0.08);
+    transform: translateY(-1px);
+  }
+
+  .input-field::placeholder {
+    color: rgba(15,23,42,0.35);
+  }
+
+  .card {
+    background-color: var(--surface);
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(2,6,23,0.06);
+    border: 1px solid rgba(10,10,10,0.04);
+  }
+
+  .card p, .card a {
+    color: rgba(10,10,10,0.75);
+  }
+
+  /* make headings and primary text more visible and classy */
+  h1, h2, h3, h4, h5 {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  p, label, a, li {
+    color: rgba(10,10,10,0.84);
+  }
+
+  .lead {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: rgba(10,10,10,0.9);
+    font-weight: 600;
+  }
+
+  /* Spacing between stacked blocks/cards to improve readability */
+  .card + .card,
+  .section + .section,
+  .block + .block,
+  .container > .card + .card {
+    margin-top: 0.5rem;
+  }
+
+  /* Utility class for consistent small spacing */
+  .block-space {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Small gap between adjacent buttons (e.g., Sign Up and Get Started) */
+  .btn + .btn,
+  .btn-group > * + * {
+    margin-left: 0.5rem;
+  }
+
+  .form-label {
+    color: rgba(15,23,42,0.75);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  /* Typography helpers to avoid visual collapse and emphasize important words */
+  h1, h2, h3, h4, h5 {
+    color: var(--surface);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+  }
+
+  p, label, a, li {
+    color: rgba(255,255,255,0.92);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.95);
+    font-weight: 500;
+  }
+
+  .important {
+    font-weight: 700;
+    color: var(--primary-50);
+  }
+
+  strong, b {
+    font-weight: 700;
+    color: inherit;
+  }
+
+  /* Prevent text collapsing in tight UI elements */
+  .no-collapse {
+    line-height: 1.45 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .icon-muted {
+    color: rgba(15,23,42,0.35);
+  }
+
+  .link-primary {
+    color: var(--primary-600);
+    font-weight: 600;
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .status-pending {
+    background-color: #fed7aa;
+    color: #9a3412;
+  }
+
+  .status-in-progress {
+    background-color: #dbeafe;
+    color: #1e40af;
+  }
+
+  .status-completed {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+
+  .priority-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .priority-low {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+
+  .priority-medium {
+    background-color: #fed7aa;
+    color: #9a3412;
+  }
+
+  .priority-high {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background-color: #f3f4f6;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 9999px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+  }
+}
